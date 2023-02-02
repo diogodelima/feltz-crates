@@ -1,0 +1,5 @@
+name: feltz-crates
+version: '${project.version}'
+main: pt.dioguin.crates.CratesPlugin
+authors: [ yDioguin_ ]
+website: https://diogolima.tk

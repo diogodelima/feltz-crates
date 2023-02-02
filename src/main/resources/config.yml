@@ -1,0 +1,29 @@
+crates:
+  default:
+    display:
+      material: "TRIPWIRE_HOOK"
+      data: 0
+      name: "&7Key Default"
+      lore:
+        - "&7Use this crate to open"
+        - "&7and earn rewards"
+      glow: false
+    rewards:
+      1:
+        material: "DIAMOND_BLOCK"
+        data: 0
+        amount: 32
+        glow: false
+      2:
+        material: "IRON_BLOCK"
+        data: 0
+        amount: 32
+        name: "&eIron Block"
+        lore:
+          - "&7a nice block"
+        glow: true
+      3:
+        material: "GOLD_BLOCK"
+        data: 0
+        amount: 1
+        command: "give {player} gold_block 64"
