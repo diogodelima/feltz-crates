@@ -11,11 +11,12 @@ public final class CratesPlugin extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         crateManager = new CrateManager();
+        crateManager.loadCrates();
     }
 
     @Override
     public void onDisable() {
-
+        crateManager.save();
     }
 
     public static CrateManager getCrateManager() {
