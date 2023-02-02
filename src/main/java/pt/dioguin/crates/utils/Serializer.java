@@ -6,7 +6,7 @@ import org.bukkit.Location;
 public class Serializer {
 
     public static String locationSerializer(Location paramLocation) {
-        return String.valueOf(String.valueOf(paramLocation.getWorld().getName())) + "@" + paramLocation.getX() + "@" + paramLocation.getY() + "@" + paramLocation.getZ() + "@" + paramLocation.getYaw() + "@" + paramLocation.getPitch();
+        return paramLocation.getWorld().getName() + "@" + paramLocation.getX() + "@" + paramLocation.getY() + "@" + paramLocation.getZ() + "@" + paramLocation.getYaw() + "@" + paramLocation.getPitch();
     }
 
     public static Location locationDeserializer(String paramString) {
