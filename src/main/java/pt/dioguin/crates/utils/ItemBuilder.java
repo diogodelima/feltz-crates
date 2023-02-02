@@ -73,7 +73,10 @@ public class ItemBuilder {
         return this;
     }
 
-    public ItemBuilder glow(){
+    public ItemBuilder glow(boolean glow){
+
+        if (!glow) return this;
+
         ItemMeta meta = item.getItemMeta();
         meta.addEnchant(Enchantment.ARROW_DAMAGE, 1, true);
         meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
