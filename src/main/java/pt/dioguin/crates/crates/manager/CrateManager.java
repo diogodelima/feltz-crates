@@ -32,6 +32,7 @@ public class CrateManager {
             config.set("crates." + crate.getName() + ".location", Serializer.locationSerializer(crate.getLocation()));
         }
 
+        CratesPlugin.getInstance().saveConfig();
     }
 
     public void loadCrates(){
@@ -99,6 +100,10 @@ public class CrateManager {
 
     public Crate getCrate(String name){
         return this.crates.stream().filter(crate -> crate.getName().equalsIgnoreCase(name)).findFirst().orElse(null);
+    }
+
+    public Crate getCrate(Location location){
+        return this.crates.stream().filter(crate -> crate.getLocation().equals(location)).findFirst().orElse(null);
     }
 
     public List<Crate> getCrates() {

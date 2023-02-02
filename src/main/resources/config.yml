@@ -32,5 +32,6 @@ crates:
         material: "GOLD_BLOCK"
         data: 0
         amount: 1
+        glow: false
         command: "give {player} gold_block 64"
         chance: 0.3
