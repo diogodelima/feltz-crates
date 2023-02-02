@@ -101,6 +101,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setLore(List<String> lore){
+        lore.replaceAll(s -> s.replace("&", "§"));
         return changeItemMeta(it -> it.setLore(lore));
     }
 
