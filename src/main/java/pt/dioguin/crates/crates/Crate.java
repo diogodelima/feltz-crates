@@ -5,7 +5,6 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.util.Vector;
 import pt.dioguin.crates.CratesPlugin;
 import pt.dioguin.crates.crates.rewards.Reward;
 import pt.dioguin.crates.inventory.CratePreviewInventory;
@@ -54,6 +53,15 @@ public class Crate {
     }
 
     public void open(Player player){
+
+        double random = Math.random();
+
+        for (Reward reward : this.rewards) {
+            if (reward.getChance() >= random) {
+                reward.give(player);
+                break;
+            }
+        }
 
     }
 

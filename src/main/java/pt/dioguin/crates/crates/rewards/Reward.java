@@ -1,5 +1,6 @@
 package pt.dioguin.crates.crates.rewards;
 
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class Reward {
@@ -12,6 +13,10 @@ public class Reward {
         this.item = item;
         this.command = command;
         this.chance = chance;
+    }
+
+    public void give(Player player){
+        player.getInventory().addItem(item);
     }
 
     public ItemStack getItem() {

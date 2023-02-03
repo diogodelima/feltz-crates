@@ -5,3 +5,4 @@ authors: [ yDioguin_ ]
 website: https://diogolima.tk
 commands:
   crate:
+    aliases: [crates]
