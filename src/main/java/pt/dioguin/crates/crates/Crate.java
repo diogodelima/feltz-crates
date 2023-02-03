@@ -58,7 +58,7 @@ public class Crate {
 
         for (Reward reward : this.rewards) {
             if (reward.getChance() >= random) {
-                reward.give(player);
+                reward.give(player, this.location);
                 break;
             }
         }

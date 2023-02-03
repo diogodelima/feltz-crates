@@ -9,6 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import pt.dioguin.crates.CratesPlugin;
 import pt.dioguin.crates.crates.Crate;
 import pt.dioguin.crates.crates.rewards.Reward;
+import pt.dioguin.crates.crates.rewards.rarity.Rarity;
 import pt.dioguin.crates.utils.ItemBuilder;
 import pt.dioguin.crates.utils.Serializer;
 
@@ -91,8 +92,9 @@ public class CrateManager {
                     .build();
 
             String command = config.getString(path + "." + key + ".command");
+            String rarity = config.getString(path + "." + key + ".rarity");
             double chance = config.getDouble(path + "." + key + ".chance");
-            rewards.add(new Reward(item, command, chance));
+            rewards.add(new Reward(item, command, chance, Rarity.valueOf(rarity)));
         }
 
         return rewards;

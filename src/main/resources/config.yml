@@ -16,6 +16,7 @@ crates:
         glow: false
         command: "none"
         chance: 0.02
+        rarity: "legendary"
       2:
         material: "IRON_BLOCK"
         data: 0
@@ -28,6 +29,7 @@ crates:
         enchants:
           - "DAMAGE_ALL:10"
         chance: 0.1
+        rarity: "uncommon"
       3:
         material: "GOLD_BLOCK"
         data: 0
@@ -35,3 +37,4 @@ crates:
         glow: false
         command: "give {player} gold_block 64"
         chance: 0.3
+        rarity: "common"
