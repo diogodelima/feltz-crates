@@ -25,4 +25,8 @@ public class Reward {
     public double getChance() {
         return chance;
     }
+
+    public int getChanceFormatted(){
+        return (int) (getChance() * 100);
+    }
 }

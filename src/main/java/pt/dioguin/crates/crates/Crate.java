@@ -8,8 +8,10 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.util.Vector;
 import pt.dioguin.crates.CratesPlugin;
 import pt.dioguin.crates.crates.rewards.Reward;
+import pt.dioguin.crates.inventory.CratePreviewInventory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Crate {
@@ -56,7 +58,7 @@ public class Crate {
     }
 
     public void preview(Player player){
-
+        CratesPlugin.getInstance().getViewFrame().open(CratePreviewInventory.class, player, new HashMap<String, Object>(){{put("rewards", rewards);}});
     }
 
     private void spawnHologram(Location location){

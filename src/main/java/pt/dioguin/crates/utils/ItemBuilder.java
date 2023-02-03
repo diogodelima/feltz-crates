@@ -10,10 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.SkullMeta;
 
 import java.lang.reflect.Field;
-import java.util.Arrays;
-import java.util.Base64;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 import java.util.function.Consumer;
 
 public class ItemBuilder {
@@ -103,6 +100,18 @@ public class ItemBuilder {
     public ItemBuilder setLore(List<String> lore){
         lore.replaceAll(s -> s.replace("&", "§"));
         return changeItemMeta(it -> it.setLore(lore));
+    }
+
+    public ItemBuilder addLore(String... lore){
+        return changeItemMeta(meta -> {
+
+            List<String> loreString = new ArrayList<>();
+            if (meta.hasLore())
+                loreString = meta.getLore();
+
+            loreString.addAll(Arrays.asList(lore));
+            meta.setLore(loreString);
+        });
     }
 
     public ItemStack build(){
