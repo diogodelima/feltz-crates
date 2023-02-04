@@ -8,7 +8,6 @@ import org.bukkit.inventory.ItemStack;
 import pt.dioguin.crates.crates.rewards.rarity.Rarity;
 import pt.dioguin.crates.utils.Firework;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 public class Reward {
@@ -39,10 +38,6 @@ public class Reward {
 
     public ItemStack getItem() {
         return item;
-    }
-
-    public String getCommand() {
-        return command;
     }
 
     public double getChance() {
