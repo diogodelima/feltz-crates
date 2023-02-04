@@ -26,8 +26,14 @@ public class Reward {
     }
 
     public void give(Player player, Location location){
+
+        if (player.getItemInHand().getAmount() > 1) player.getItemInHand().setAmount(player.getItemInHand().getAmount() - 1);
+        else player.setItemInHand(null);
+
+        if (this.command.equalsIgnoreCase("none")) player.getInventory().addItem(item);
+        else Bukkit.dispatchCommand(Bukkit.getConsoleSender(), this.command.replace("{player}", player.getName()));
+
         Firework.spawnFirework(location.clone().add(0.5, 1, 0.5), FireworkEffect.builder().withColor(this.rarity.getColor()).build(), Collections.singletonList(player));
-        player.getInventory().addItem(item);
         Bukkit.broadcastMessage("§eThe player " + player.getName() + " §ehas collected a " + this.rarity.getChatColor() + this.rarity.name().toUpperCase() + " §eitem in the crate!");
     }
 
